@@ -1,2 +1,3 @@
-# Gabriel estuvo aquí :V
-# Marcelo estuvo aquí Bv
+# Gabriel estuvo aquí 
+# Marcelo estuvo aquí 
+
