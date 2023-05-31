@@ -7,8 +7,8 @@ using namespace std;
 class mapa{
 private:
     string name;
-    int width{60};       // No confundir corchetes con llaves, especialmente en la linea 8 y 9.
-    int height{180};
+    int width{0};       // No confundir corchetes con llaves, especialmente en la linea 8 y 9.
+    int height{0};
     vector<vector<Tile>> tiles;
 public:
     mapa(string n, int w, int h){           // De esta linea hasta la 14 inicializa los
