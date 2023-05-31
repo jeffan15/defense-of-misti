@@ -2,7 +2,7 @@
 #include <array>
 #include "enemigo.h"
 #include "jugador.h"
-#include "torres.h"
+#include "torre.h"
 #include "mapa.h"
 
 using namespace std;
