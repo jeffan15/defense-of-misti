@@ -1,9 +1,9 @@
 #include <iostream>
 #include <array>
-#include "enemigo.h"
-#include "jugador.h"
-#include "torre.h"
-#include "mapa.h"
+#include "ememigo/enemigo.h"
+#include "jugador/jugador.h"
+#include "torre/torre.h"
+#include "mapa/mapa.h"
 
 using namespace std;
 
