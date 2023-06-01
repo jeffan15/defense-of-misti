@@ -1,9 +1,16 @@
 #include <iostream>
-#include <array>
-#include "enemigo.h"
-#include "jugador.h"
-#include "torre.h"
-#include "mapa.h"
+#include "enemigo/enemigo.h"
+#include "enemigo/boss.h"
+#include "enemigo/ghost.h"
+#include "enemigo/goblin.h"
+#include "enemigo/golem.h"
+#include "jugador/jugador.h"
+#include "torres/torre.h"
+#include "torres/torrealcanceextendido.h"
+#include "torres/torrearea.h"
+#include "torres/torreataquerapido.h"
+#include "torres/torrecongelacion.h"
+#include "mapa/mapa.h"
 
 using namespace std;
 
@@ -46,5 +53,26 @@ int main() {
                 break;
         }
     } while (eleccion != opcionesNum);
+    
+
+    //Zona de pruebas:
+
+    jugador miJugador("Player1", 0, 100, 100);
+
+  
+    cout << "Apodo del jugador: " << miJugador.getApodo() << endl;
+    cout << "Puntuacion del jugador: " << miJugador.getPuntuacion() << endl;
+    cout << "Soles del jugador: " << miJugador.getSoles() << endl;
+    cout << "Vida del jugador: " << miJugador.getVida() << endl;
+
+    torre torreA(50, 100, 80, 75);
+
+    cout << "Alcance de ataque de TorreA: " << torreA.getAlcanceAtaque() << endl;
+   
+    torrealcanceextendido torreAE(80, 120, 90, 90, 10);
+   
+    cout << "Ataque base de torreAE: " << torreAE.getAtaqueBase() << endl;
+
+
     return 0;
 }

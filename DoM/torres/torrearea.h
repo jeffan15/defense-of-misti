@@ -1,21 +1,21 @@
-using namespace std;
-#include "torre.h"
-
 #ifndef TORREAREA_H
 #define TORREAREA_H
 
+#include "torre.h"
 
-class TorreArea : public torre {
+class torrearea : public torre {
 private:
-    float radio;
-    float danoArea;
-public:
-    TorreArea(string t, short a, int p, float r, float da);
-    float getRadio() const;
-    float getDanoArea() const;
-    void atacarEnemigosArea();
-    void aumentarRadio(float factor);
-};
+    int areaAtaque;
 
+public:
+    torrearea(int p, int a, int aa, int va, int area);
+    virtual ~torrearea() = default;
+
+    int getAreaAtaque() const;
+    void setAreaAtaque(int area);
+
+    void construir() override;
+    void mejorar() override;
+};
 
 #endif

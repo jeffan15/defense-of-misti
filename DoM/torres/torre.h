@@ -1,27 +1,38 @@
-#include <iostream>
-#include <vector>
-#include <iomanip>
-using namespace std;
-
 #ifndef TORRE_H
 #define TORRE_H
 
+#include <iostream>
+using namespace std;
 
-class torre{
-private:
-    string tipo;
-    short ataque{0};
-    int precio{0};
+class torre {
+protected:
+    int precio;
+    int ataqueBase;
+    int alcanceAtaque;
+    int velocidadAtaque;
+
 public:
-    torre(string t, short a, int p);
-    void setTipo(string t);
-    void setAtaque(short a);
-    void setPrecio(int p);
-    string getTipo() const;
-    short getAtaque() const;
+    torre(int p, int a, int aa, int va);
+    virtual ~torre() = default;
+
     int getPrecio() const;
-    void build();
-    void upgrade();
+    int getAtaqueBase() const;
+    int getAlcanceAtaque() const;
+    int getVelocidadAtaque() const;
+
+    void setPrecio(int p);
+    void setAtaqueBase(int a);
+    void setAlcanceAtaque(int aa);
+    void setVelocidadAtaque(int va);
+
+    virtual void construir();
+    virtual void mejorar();
+
+    // Métodos adicionales sugeridos
+    virtual void setPosition(int x, int y);
+    virtual void mover(int x, int y);
+    virtual void aplicarMejoraEspecial();
+    virtual void interactuarConEnemigo();
 };
 
 #endif

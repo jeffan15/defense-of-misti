@@ -1,21 +1,23 @@
-using namespace std;
 #include "torrearea.h"
 
-TorreArea::TorreArea(string t, short a, int p, float r, float da)
-    : torre(t, a, p), radio(r), danoArea(da) {}
-
-float TorreArea::getRadio() const {
-    return radio;
+torrearea::torrearea(int p, int a, int aa, int va, int area) : torre(p, a, aa, va) {
+    areaAtaque = area;
 }
 
-float TorreArea::getDanoArea() const {
-    return danoArea;
+int torrearea::getAreaAtaque() const {
+    return areaAtaque;
 }
 
-void TorreArea::atacarEnemigosArea() {
-    // Implementación para atacar a los enemigos dentro del radio de ataque
+void torrearea::setAreaAtaque(int area) {
+    areaAtaque = area;
 }
 
-void TorreArea::aumentarRadio(float factor) {
-    radio *= factor;
+void torrearea::construir() {
+    // Pendiente implementación de construcción de torre en área
+    cout << "Construyendo torre en área..." << endl;
+}
+
+void torrearea::mejorar() {
+    // Pendiente implementación de mejora de torre en área
+    cout << "Mejorando torre en área..." << endl;
 }

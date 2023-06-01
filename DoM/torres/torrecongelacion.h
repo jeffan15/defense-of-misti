@@ -1,22 +1,21 @@
-using namespace std;
-#include "torre.h"
-
 #ifndef TORRECONGELACION_H
 #define TORRECONGELACION_H
 
+#include "torre.h"
 
-
-class TorreCongelacion : public torre {
+class torrecongelacion : public torre {
 private:
-    float velocidadReducida;
-    float duracionCongelacion;
-public:
-    TorreCongelacion(string t, short a, int p, float vr, float dc);
-    float getVelocidadReducida() const;
-    float getDuracionCongelacion() const;
-    void ralentizarEnemigos();
-    void aumentarDuracionCongelacion(float factor);
-};
+    int factorCong;
 
+public:
+    torrecongelacion(int p, int a, int aa, int va, int factor);
+    virtual ~torrecongelacion() = default;
+
+    int getFactorCong() const;
+    void setFactorCong(int factor);
+
+    void construir() override;
+    void mejorar() override;
+};
 
 #endif

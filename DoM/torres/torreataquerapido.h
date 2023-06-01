@@ -1,21 +1,21 @@
-using namespace std;
-#include "torre.h"
-
 #ifndef TORREATAQUERAPIDO_H
 #define TORREATAQUERAPIDO_H
 
+#include "torre.h"
 
-
-class TorreAtaqueRapido : public torre {
+class torreataquerapido : public torre {
 private:
-    float velocidadAtaque;
-    float rangoAtaque;
+    int velocidadAtaqueExtra;
+
 public:
-    TorreAtaqueRapido(string t, short a, int p, float va, float ra);
-    float getVelocidadAtaque() const;
-    float getRangoAtaque() const;
-    void dispararEnemigo();
-    void aumentarVelocidadAtaque(float factor);
+    torreataquerapido(int p, int a, int aa, int va, int velocidad);
+    virtual ~torreataquerapido() = default;
+
+    int getVelocidadAtaqueExtra() const;
+    void setVelocidadAtaqueExtra(int velocidad);
+
+    void construir() override;
+    void mejorar() override;
 };
 
 #endif

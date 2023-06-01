@@ -1,22 +1,23 @@
-using namespace std;
 #include "torrecongelacion.h"
 
-TorreCongelacion::TorreCongelacion(string t, short a, int p, float vr, float dc)
-    : torre(t, a, p), velocidadReducida(vr), duracionCongelacion(dc) {}
-
-float TorreCongelacion::getVelocidadReducida() const {
-    return velocidadReducida;
+torrecongelacion::torrecongelacion(int p, int a, int aa, int va, int factor) : torre(p, a, aa, va) {
+    factorCong = factor;
 }
 
-float TorreCongelacion::getDuracionCongelacion() const {
-    return duracionCongelacion;
+int torrecongelacion::getFactorCong() const {
+    return factorCong;
 }
 
-void TorreCongelacion::ralentizarEnemigos() {
-    // Implementación para reducir la velocidad de movimiento de los enemigos
+void torrecongelacion::setFactorCong(int factor) {
+    factorCong = factor;
 }
 
-void TorreCongelacion::aumentarDuracionCongelacion(float factor) {
-    duracionCongelacion *= factor;
+void torrecongelacion::construir() {
+    // Pendiente mplementación de construcción de torre de congelación
+    cout << "Construyendo torre de congelación..." << endl;
 }
 
+void torrecongelacion::mejorar() {
+    // Pendiente implementación de mejora de torre de congelación
+    cout << "Mejorando torre de congelación..." << endl;
+}

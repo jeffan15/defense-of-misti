@@ -1,19 +1,21 @@
-using namespace std;
-#include "torre.h"
-
 #ifndef TORREALCANCEEXTENDIDO_H
 #define TORREALCANCEEXTENDIDO_H
 
+#include "torre.h"
 
-class TorreAlcanceExtendido : public torre {
+class torrealcanceextendido : public torre {
 private:
-    float alcance;
-    string tipoMunicion;
+    int rangoExtra;
+
 public:
-    TorreAlcanceExtendido(string t, short a, int p, float al, string tm);
-    float getAlcance() const;
-    string getTipoMunicion() const;
-    void cambiarTipoMunicion(string nuevoTipo);
+    torrealcanceextendido(int p, int a, int aa, int va, int r);
+    virtual ~torrealcanceextendido() = default;
+
+    int getRangoExtra() const;
+    void setRangoExtra(int r);
+
+    void construir() override;
+    void mejorar() override;
 };
 
 #endif

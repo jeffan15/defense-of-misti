@@ -1,18 +1,23 @@
-using namespace std;
-
 #include "torrealcanceextendido.h"
 
-TorreAlcanceExtendido::TorreAlcanceExtendido(string t, short a, int p, float al, string tm)
-    : torre(t, a, p), alcance(al), tipoMunicion(tm) {}
-
-float TorreAlcanceExtendido::getAlcance() const {
-    return alcance;
+torrealcanceextendido::torrealcanceextendido(int p, int a, int aa, int va, int r) : torre(p, a, aa, va) {
+    rangoExtra = r;
 }
 
-string TorreAlcanceExtendido::getTipoMunicion() const {
-    return tipoMunicion;
+int torrealcanceextendido::getRangoExtra() const {
+    return rangoExtra;
 }
 
-void TorreAlcanceExtendido::cambiarTipoMunicion(string nuevoTipo) {
-    tipoMunicion = nuevoTipo;
+void torrealcanceextendido::setRangoExtra(int r) {
+    rangoExtra = r;
+}
+
+void torrealcanceextendido::construir() {
+    // Pendiente implementación de construcción de torre con alcance extendido
+    cout << "Construyendo torre con alcance extendido..." << endl;
+}
+
+void torrealcanceextendido::mejorar() {
+    // Pendiente implementación de mejora de torre con alcance extendido
+    cout << "Mejorando torre con alcance extendido..." << endl;
 }

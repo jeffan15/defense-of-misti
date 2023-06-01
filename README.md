@@ -1,3 +1,1 @@
-# Gabriel estuvo aquí 
-# Marcelo estuvo aquí 
-
+#CONSIDERAR INCLUIR COSAS DENTRO DE ESTE README

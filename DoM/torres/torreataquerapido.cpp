@@ -1,21 +1,23 @@
-using namespace std;
 #include "torreataquerapido.h"
 
-TorreAtaqueRapido::TorreAtaqueRapido(string t, short a, int p, float va, float ra)
-    : torre(t, a, p), velocidadAtaque(va), rangoAtaque(ra) {}
-
-float TorreAtaqueRapido::getVelocidadAtaque() const {
-    return velocidadAtaque;
+torreataquerapido::torreataquerapido(int p, int a, int aa, int va, int velocidad) : torre(p, a, aa, va) {
+    velocidadAtaqueExtra = velocidad;
 }
 
-float TorreAtaqueRapido::getRangoAtaque() const {
-    return rangoAtaque;
+int torreataquerapido::getVelocidadAtaqueExtra() const {
+    return velocidadAtaqueExtra;
 }
 
-void TorreAtaqueRapido::dispararEnemigo() {
-    // Implementación para disparar a los enemigos dentro del rango de ataque
+void torreataquerapido::setVelocidadAtaqueExtra(int velocidad) {
+    velocidadAtaqueExtra = velocidad;
 }
 
-void TorreAtaqueRapido::aumentarVelocidadAtaque(float factor) {
-    velocidadAtaque *= factor;
+void torreataquerapido::construir() {
+    // Pendiente implementación de construcción de torre de ataque rápido
+    cout << "Construyendo torre de ataque rápido..." << endl;
+}
+
+void torreataquerapido::mejorar() {
+    // Pendiente implementación de mejora de torre de ataque rápido
+    cout << "Mejorando torre de ataque rápido..." << endl;
 }
