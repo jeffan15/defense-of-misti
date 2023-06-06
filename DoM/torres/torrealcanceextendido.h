@@ -14,8 +14,8 @@ public:
     int getRangoExtra() const;
     void setRangoExtra(int r);
 
-    void construir() override;
-    void mejorar() override;
+    virtual void construir() override;
+    virtual void mejorar() override;
 };
 
 #endif

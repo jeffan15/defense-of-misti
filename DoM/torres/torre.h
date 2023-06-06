@@ -25,14 +25,13 @@ public:
     void setAlcanceAtaque(int aa);
     void setVelocidadAtaque(int va);
 
-    virtual void construir();
-    virtual void mejorar();
+    virtual void construir() = 0;
+    virtual void mejorar() = 0;
 
-    // Métodos adicionales sugeridos
-    virtual void setPosition(int x, int y);
-    virtual void mover(int x, int y);
-    virtual void aplicarMejoraEspecial();
-    virtual void interactuarConEnemigo();
+    virtual void setPosition(int x, int y) = 0;
+    virtual void mover(int x, int y) = 0;
+    virtual void aplicarMejoraEspecial() = 0;
+    virtual void interactuarConEnemigo() = 0;
 };
 
 #endif

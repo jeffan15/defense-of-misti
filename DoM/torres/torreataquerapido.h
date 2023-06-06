@@ -14,8 +14,8 @@ public:
     int getVelocidadAtaqueExtra() const;
     void setVelocidadAtaqueExtra(int velocidad);
 
-    void construir() override;
-    void mejorar() override;
+    virtual void construir() override;
+    virtual void mejorar() override;
 };
 
 #endif
