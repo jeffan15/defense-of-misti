@@ -1,3 +1,4 @@
+#pragma once
 #ifndef TORREALCANCEEXTENDIDO_H
 #define TORREALCANCEEXTENDIDO_H
 
@@ -14,7 +15,7 @@ public:
     int getRangoExtra() const;
     void setRangoExtra(int r);
 
-    virtual void construir() override;
+    virtual void construir(const int x,const int y) override;
     virtual void mejorar() override;
 };
 

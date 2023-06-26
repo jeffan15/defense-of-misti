@@ -1,6 +1,8 @@
+#pragma once
 #ifndef TORRE_H
 #define TORRE_H
 
+#include "mapa/mapa.h"
 #include <iostream>
 using namespace std;
 
@@ -25,13 +27,9 @@ public:
     void setAlcanceAtaque(int aa);
     void setVelocidadAtaque(int va);
 
-    virtual void construir() = 0;
+    virtual void construir(const int x, const int y) = 0;
     virtual void mejorar() = 0;
 
-    virtual void setPosition(int x, int y) = 0;
-    virtual void mover(int x, int y) = 0;
-    virtual void aplicarMejoraEspecial() = 0;
-    virtual void interactuarConEnemigo() = 0;
 };
 
 #endif

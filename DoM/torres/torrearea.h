@@ -1,3 +1,4 @@
+#pragma once
 #ifndef TORREAREA_H
 #define TORREAREA_H
 
@@ -14,7 +15,7 @@ public:
     int getAreaAtaque() const;
     void setAreaAtaque(int area);
 
-    virtual void construir() override;
+    virtual void construir(const int x,const int y) override;
     virtual void mejorar() override;
 };
 

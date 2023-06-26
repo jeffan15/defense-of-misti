@@ -1,1 +1,2 @@
-#CONSIDERAR INCLUIR COSAS DENTRO DE ESTE README
+#Defense Of Misti - incompleto...
+

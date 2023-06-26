@@ -12,12 +12,12 @@ void torrearea::setAreaAtaque(int area) {
     areaAtaque = area;
 }
 
-void torrearea::construir() {
-    // Pendiente implementación de construcción de torre en área
+void torrearea::construir(const int x,const int y) {
+    
     cout << "Construyendo torre en área..." << endl;
 }
 
 void torrearea::mejorar() {
-    // Pendiente implementación de mejora de torre en área
+   
     cout << "Mejorando torre en área..." << endl;
 }

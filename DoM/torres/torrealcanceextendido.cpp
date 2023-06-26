@@ -12,12 +12,12 @@ void torrealcanceextendido::setRangoExtra(int r) {
     rangoExtra = r;
 }
 
-void torrealcanceextendido::construir() {
-    // Pendiente implementación de construcción de torre con alcance extendido
+void torrealcanceextendido::construir(const int x,const int y) {
+    
     cout << "Construyendo torre con alcance extendido..." << endl;
 }
 
 void torrealcanceextendido::mejorar() {
-    // Pendiente implementación de mejora de torre con alcance extendido
+    
     cout << "Mejorando torre con alcance extendido..." << endl;
 }

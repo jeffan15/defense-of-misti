@@ -1,78 +1,139 @@
+#include <SFML/Graphics.hpp>
 #include <iostream>
+#include <vector>
+#include "mapa/mapa.h"
+#include "torres/torre.h"
+#include "torres/torrealcanceextendido.h"
+#include "torres/torreataquerapido.h"
+#include "torres/torrecongelacion.h"
+#include "torres/torrearea.h"
 #include "enemigo/enemigo.h"
 #include "enemigo/boss.h"
 #include "enemigo/ghost.h"
 #include "enemigo/goblin.h"
 #include "enemigo/golem.h"
 #include "jugador/jugador.h"
-#include "torres/torre.h"
-#include "torres/torrealcanceextendido.h"
-#include "torres/torrearea.h"
-#include "torres/torreataquerapido.h"
-#include "torres/torrecongelacion.h"
-#include "mapa/mapa.h"
+#include "game_settings/gamesets.h"
 
-using namespace std;
+const int WINDOW_WIDTH = 800;
+const int WINDOW_HEIGHT = 600;
 
+enum class MenuOption {
+    Start,
+    Exit
+};
 
+MenuOption showMenu(sf::RenderWindow& window) {
+    sf::Font font;
+    if (!font.loadFromFile("arial.ttf")) {
+        std::cerr << "Failed to load font" << std::endl;
+        return MenuOption::Exit;
+    }
 
-string opcionesMenu[] = {"Iniciar juego", "Opciones", "Salir"};
-const int opcionesNum = 3;
+    sf::Text title;
+    title.setFont(font);
+    title.setString("Defense of Misty");
+    title.setCharacterSize(40);
+    title.setPosition((WINDOW_WIDTH - title.getLocalBounds().width) / 2, 100);
 
+    sf::Text startText;
+    startText.setFont(font);
+    startText.setString("Iniciar juego");
+    startText.setCharacterSize(30);
+    startText.setPosition((WINDOW_WIDTH - startText.getLocalBounds().width) / 2, 200);
 
-int mostrarMenu() {
-    int eleccion;
-    do {
-        cout << "Menu Principal" << endl;
-        for (int i = 0; i < opcionesNum; i++) {
-            cout << i+1 << ". " << opcionesMenu[i] << endl;
+    sf::Text exitText;
+    exitText.setFont(font);
+    exitText.setString("Salir");
+    exitText.setCharacterSize(30);
+    exitText.setPosition((WINDOW_WIDTH - exitText.getLocalBounds().width) / 2, 250);
+
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                window.close();
+                return MenuOption::Exit;
+            }
+
+            if (event.type == sf::Event::MouseButtonPressed) {
+                sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+
+                if (startText.getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
+                    return MenuOption::Start;
+                }
+
+                if (exitText.getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
+                    window.close();
+                    return MenuOption::Exit;
+                }
+            }
         }
-    
-        cout << "\nIngrese su eleccion (1-" << opcionesNum << "): \n";
-        cin >> eleccion;
-    } while (eleccion < 1 || eleccion > opcionesNum);
-    return eleccion;
+
+        window.clear(sf::Color::Black);
+        window.draw(title);
+        window.draw(startText);
+        window.draw(exitText);
+        window.display();
+    }
+
+    return MenuOption::Exit;
 }
 
 int main() {
-    int eleccion;
-    do {
+    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Defense of Misty");
+    window.setFramerateLimit(60);
 
-        eleccion = mostrarMenu();
-        
 
-        switch (eleccion) {
-            case 1:
-                cout << "\nIniciando juego...\n" << endl;
-                break;
-            case 2:
-                cout << "\nMostrando opciones...\n" << endl;
-                break;
-            case 3:
-                cout << "\nSaliendo del programa...\n" << endl;
-                break;
+
+    mapa map(WINDOW_WIDTH, WINDOW_HEIGHT);
+
+    map.setPath(1, 1);
+    map.setPath(1, 2);
+    map.setPath(2, 2);
+    map.setPath(2, 3);
+    map.setPath(3, 3);
+    map.setPath(3, 2);
+    map.setPath(4, 2);
+    map.setPath(4, 1);
+    map.setPath(5, 1);
+    map.setPath(6, 1);
+    map.setPath(6, 2);
+    map.setPath(6, 3);
+    map.setPath(7, 3);
+    map.setPath(8, 3);
+    map.setPath(8, 2);
+    map.setPath(8, 1);
+    map.setPath(9, 1);
+    map.setPath(9, 2);
+
+    map.setTower(3, 4);
+    map.setTower(7, 2);
+    map.setTower(5, 2);
+    map.setTower(8, 4);
+
+    while (true) {
+        MenuOption option = showMenu(window);
+
+        if (option == MenuOption::Start) {
+            while (window.isOpen()) {
+                sf::Event event;
+                while (window.pollEvent(event)) {
+                    if (event.type == sf::Event::Closed)
+                        window.close();
+                }
+
+                window.clear(sf::Color::Black);
+
+                map.draw(window);
+
+                window.display();
+            }
         }
-    } while (eleccion != opcionesNum);
-    
-
-    //Zona de pruebas:
-
-    jugador miJugador("Player1", 0, 100, 100);
-
-  
-    cout << "Apodo del jugador: " << miJugador.getApodo() << endl;
-    cout << "Puntuacion del jugador: " << miJugador.getPuntuacion() << endl;
-    cout << "Soles del jugador: " << miJugador.getSoles() << endl;
-    cout << "Vida del jugador: " << miJugador.getVida() << endl;
-
-    torre torreA(50, 100, 80, 75);
-
-    cout << "Alcance de ataque de TorreA: " << torreA.getAlcanceAtaque() << endl;
-   
-    torrealcanceextendido torreAE(80, 120, 90, 90, 10);
-   
-    cout << "Ataque base de torreAE: " << torreAE.getAtaqueBase() << endl;
-
+        else if (option == MenuOption::Exit) {
+            break;
+        }
+    }
 
     return 0;
 }

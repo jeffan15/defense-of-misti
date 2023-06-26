@@ -12,12 +12,12 @@ void torrecongelacion::setFactorCong(int factor) {
     factorCong = factor;
 }
 
-void torrecongelacion::construir() {
-    // Pendiente mplementación de construcción de torre de congelación
+void torrecongelacion::construir(const int x,const int y) {
+   
     cout << "Construyendo torre de congelación..." << endl;
 }
 
 void torrecongelacion::mejorar() {
-    // Pendiente implementación de mejora de torre de congelación
+   
     cout << "Mejorando torre de congelación..." << endl;
 }

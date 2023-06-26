@@ -1,3 +1,4 @@
+#pragma once
 #ifndef TORREATAQUERAPIDO_H
 #define TORREATAQUERAPIDO_H
 
@@ -14,7 +15,7 @@ public:
     int getVelocidadAtaqueExtra() const;
     void setVelocidadAtaqueExtra(int velocidad);
 
-    virtual void construir() override;
+    virtual void construir(const int x, const int y) override;
     virtual void mejorar() override;
 };
 

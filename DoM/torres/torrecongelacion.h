@@ -1,3 +1,4 @@
+#pragma once
 #ifndef TORRECONGELACION_H
 #define TORRECONGELACION_H
 
@@ -14,7 +15,7 @@ public:
     int getFactorCong() const;
     void setFactorCong(int factor);
 
-    virtual void construir() override;
+    virtual void construir(const int x,const int y) override;
     virtual void mejorar() override;
 };
 

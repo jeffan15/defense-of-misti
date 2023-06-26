@@ -12,12 +12,12 @@ void torreataquerapido::setVelocidadAtaqueExtra(int velocidad) {
     velocidadAtaqueExtra = velocidad;
 }
 
-void torreataquerapido::construir() {
-    // Pendiente implementación de construcción de torre de ataque rápido
-    cout << "Construyendo torre de ataque rápido..." << endl;
+void torreataquerapido::construir(const int x, const int y) {
+    
+    cout << "Construyendo torre de ataque rapido..." << endl;
 }
 
 void torreataquerapido::mejorar() {
-    // Pendiente implementación de mejora de torre de ataque rápido
-    cout << "Mejorando torre de ataque rápido..." << endl;
+    
+    cout << "Mejorando torre de ataque rapido..." << endl;
 }
