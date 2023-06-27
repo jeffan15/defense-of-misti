@@ -2,7 +2,7 @@
 #ifndef TORRE_H
 #define TORRE_H
 
-#include "mapa/mapa.h"
+#include "../mapa/mapa.h"
 #include <iostream>
 using namespace std;
 
@@ -12,9 +12,11 @@ protected:
     int ataqueBase;
     int alcanceAtaque;
     int velocidadAtaque;
+    int posX;
+    int posY;
 
 public:
-    torre(int p, int a, int aa, int va);
+    torre(int p, int a, int aa, int va, int x, int y);
     virtual ~torre() = default;
 
     int getPrecio() const;
@@ -27,7 +29,8 @@ public:
     void setAlcanceAtaque(int aa);
     void setVelocidadAtaque(int va);
 
-    virtual void construir(const int x, const int y) = 0;
+    virtual int getX() const = 0;
+    virtual int getY() const = 0;
     virtual void mejorar() = 0;
 
 };

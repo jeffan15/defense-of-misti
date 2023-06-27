@@ -1,6 +1,6 @@
 #include "torrearea.h"
 
-torrearea::torrearea(int p, int a, int aa, int va, int area) : torre(p, a, aa, va) {
+torrearea::torrearea(int p, int a, int aa, int va, int x, int y, int area) : torre(p, a, aa, va, x, y) {
     areaAtaque = area;
 }
 
@@ -12,9 +12,12 @@ void torrearea::setAreaAtaque(int area) {
     areaAtaque = area;
 }
 
-void torrearea::construir(const int x,const int y) {
-    
-    cout << "Construyendo torre en área..." << endl;
+int torre::getX() const {
+    return posX;
+}
+
+int torre::getY() const {
+    return posY;
 }
 
 void torrearea::mejorar() {

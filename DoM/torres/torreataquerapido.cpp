@@ -1,6 +1,6 @@
 #include "torreataquerapido.h"
 
-torreataquerapido::torreataquerapido(int p, int a, int aa, int va, int velocidad) : torre(p, a, aa, va) {
+torreataquerapido::torreataquerapido(int p, int a, int aa, int va, int x, int y, int velocidad) : torre(p, a, aa, va, x, y) {
     velocidadAtaqueExtra = velocidad;
 }
 
@@ -12,9 +12,12 @@ void torreataquerapido::setVelocidadAtaqueExtra(int velocidad) {
     velocidadAtaqueExtra = velocidad;
 }
 
-void torreataquerapido::construir(const int x, const int y) {
-    
-    cout << "Construyendo torre de ataque rapido..." << endl;
+int torre::getX() const {
+    return posX;
+}
+
+int torre::getY() const {
+    return posY;
 }
 
 void torreataquerapido::mejorar() {

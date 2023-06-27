@@ -1,6 +1,6 @@
 #include "torrecongelacion.h"
 
-torrecongelacion::torrecongelacion(int p, int a, int aa, int va, int factor) : torre(p, a, aa, va) {
+torrecongelacion::torrecongelacion(int p, int a, int aa, int va, int x, int y, int factor) : torre(p, a, aa, va, x, y) {
     factorCong = factor;
 }
 
@@ -12,9 +12,12 @@ void torrecongelacion::setFactorCong(int factor) {
     factorCong = factor;
 }
 
-void torrecongelacion::construir(const int x,const int y) {
-   
-    cout << "Construyendo torre de congelación..." << endl;
+int torre::getX() const {
+    return posX;
+}
+
+int torre::getY() const {
+    return posY;
 }
 
 void torrecongelacion::mejorar() {

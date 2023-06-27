@@ -9,13 +9,14 @@ private:
     int velocidadAtaqueExtra;
 
 public:
-    torreataquerapido(int p, int a, int aa, int va, int velocidad);
+    torreataquerapido(int p, int a, int aa, int va, int x, int y, int velocidad);
     virtual ~torreataquerapido() = default;
 
     int getVelocidadAtaqueExtra() const;
     void setVelocidadAtaqueExtra(int velocidad);
 
-    virtual void construir(const int x, const int y) override;
+    virtual int getX() const override;
+    virtual int getY() const override;
     virtual void mejorar() override;
 };
 

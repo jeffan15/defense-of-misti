@@ -4,6 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include "../torres/torre.h"
 
 class tile {
 public:
@@ -19,6 +20,7 @@ public:
     int width;
     int height;
     std::vector<std::vector<tile>> tiles;
+    std::vector<torre*> torres;
 
     mapa(int width, int height);
 

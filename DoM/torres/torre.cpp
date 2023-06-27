@@ -1,11 +1,12 @@
 #include "torre.h"
 
-torre::torre(int p, int a, int aa, int va) {
+torre::torre(int p, int a, int aa, int va, int x, int y) {
     precio = p;
     ataqueBase = a;
     alcanceAtaque = aa;
     velocidadAtaque = va;
-
+    posX = x;
+    posY = y;
 }
 
 int torre::getPrecio() const {
@@ -40,9 +41,12 @@ void torre::setVelocidadAtaque(int va) {
     velocidadAtaque = va;
 }
 
-void torre::construir(const int x,const int y) {
-    //
-    cout << "Construyendo torre..." << endl;
+int torre::getX() const {
+    return posX;
+}
+
+int torre::getY() const {
+    return posY;
 }
 
 void torre::mejorar() {

@@ -1,6 +1,6 @@
 #include "torrealcanceextendido.h"
 
-torrealcanceextendido::torrealcanceextendido(int p, int a, int aa, int va, int r) : torre(p, a, aa, va) {
+torrealcanceextendido::torrealcanceextendido(int p, int a, int aa, int va, int x, int y, int r) : torre(p, a, aa, va, x, y) {
     rangoExtra = r;
 }
 
@@ -12,9 +12,12 @@ void torrealcanceextendido::setRangoExtra(int r) {
     rangoExtra = r;
 }
 
-void torrealcanceextendido::construir(const int x,const int y) {
-    
-    cout << "Construyendo torre con alcance extendido..." << endl;
+int torre::getX() const {
+    return posX;
+}
+
+int torre::getY() const {
+    return posY;
 }
 
 void torrealcanceextendido::mejorar() {

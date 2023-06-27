@@ -31,4 +31,21 @@ void mapa::draw(sf::RenderWindow& window) {
             window.draw(tileShape);
         }
     }
+    for (const auto& t : torres) {
+        int x = t->getX(); 
+        int y = t->getY(); 
+
+        
+        float posX = x * 70.f;
+        float posY = y * 70.f;
+
+        
+        tileShape.setPosition(posX, posY);
+        tileShape.setSize(sf::Vector2f(70.f, 70.f));
+
+       
+        tileShape.setFillColor(sf::Color::Blue);
+
+        window.draw(tileShape);
+    }
 }

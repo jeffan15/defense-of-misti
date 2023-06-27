@@ -112,6 +112,12 @@ int main() {
     map.setTower(5, 2);
     map.setTower(8, 4);
 
+    std::vector<torre*> torres;
+    torres.push_back(new torreataquerapido(100, 10, 5, 2, 3, 4, 2));
+    
+    torres.push_back(new torreataquerapido(150, 15, 6, 2, 7, 2, 2));
+  
+
     while (true) {
         MenuOption option = showMenu(window);
 
@@ -133,6 +139,10 @@ int main() {
         else if (option == MenuOption::Exit) {
             break;
         }
+    }
+
+    for (auto& torre : torres) {
+        delete torre;
     }
 
     return 0;

@@ -9,13 +9,14 @@ private:
     int areaAtaque;
 
 public:
-    torrearea(int p, int a, int aa, int va, int area);
+    torrearea(int p, int a, int aa, int va, int x, int y, int area);
     virtual ~torrearea() = default;
 
     int getAreaAtaque() const;
     void setAreaAtaque(int area);
 
-    virtual void construir(const int x,const int y) override;
+    virtual int getX() const override;
+    virtual int getY() const override;
     virtual void mejorar() override;
 };
 

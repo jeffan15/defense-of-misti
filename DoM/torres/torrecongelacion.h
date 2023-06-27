@@ -9,13 +9,14 @@ private:
     int factorCong;
 
 public:
-    torrecongelacion(int p, int a, int aa, int va, int factor);
+    torrecongelacion(int p, int a, int aa, int va, int x, int y, int factor);
     virtual ~torrecongelacion() = default;
 
     int getFactorCong() const;
     void setFactorCong(int factor);
 
-    virtual void construir(const int x,const int y) override;
+    virtual int getX() const override;
+    virtual int getY() const override;
     virtual void mejorar() override;
 };
 
